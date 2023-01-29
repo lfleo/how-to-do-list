@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    padding: 0;   
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background: #0082e6;        /* Cor de fundo */
+    height: 80px;                 /* Altura */
+    width: 100%;                  /* Largura 100% da tela */
+}
+
+label.logo {
+    color: #fff;                /* Cor */
+    font-size: 35px;              /* Tamanho da fonte */
+    font-weight: bold;            /* Espessura da fonte */
+    line-height: 80px;            /* Especifica altura da linha */
+    padding: 0 100px;             /* Distância do conteúdo para borda */
+}
+
+nav ul {
+    float: right;                 /* Elemento flutuante */
+    margin-right: 20px;           /* Margem a direita */
+}
+
+nav ul li {
+    display: inline-block;        /* Elementos bloqueados em coluna */
+    line-height: 80px;            /* Especifica altura da linha */
+    margin: 0 5px;                /* Tamanho da margem onde eixo X(vertical) é zero e eixo Y(horizontal) 5px*/
+}
+
+nav ul li a {
+    color: #fff;                /* Cor */
+    font-size: 17px;              /* Tamanho da fonte */
+    text-transform: uppercase;    /* Transforma o texto (maiúsculo, minúsculo) */
+    padding: 7px 13px;            /* Tamanho da margem */
+    border-radius: 3px;           /* Arredondamento das bordas */
+}
+
+a.active, a:hover {               /* hover = sobre */
+    background: #1b9bff;        /* Cor do fundo */
+    transition: 0.5s;             /* Transição/tempo do efeito */
+}
+
+
+/* Temos no menu Hamburguer onde só aparecerá em determinado tamanho da tela */
+.checkbtn {
+    font-size: 30px;               /* Tamanho da fonte */
+    color: #fff;                 /* Cor */
+    float: right;                  /* Elemento flutuante */
+    line-height: 80px;             /* Especifica altura da linha */
+    margin-right: 40px;            /* Margem a direita */
+    cursor: pointer;               /* Determina que o cursor quando posicionado em cima ficará "pointer" (apontado) */
+    display: none;                 /* Não ficará visível */
+}
+
+#check {
+    display: none;                 /* Não ficará visível */
+}
+
+@media (max-width: 952px) {        /* Em determinado tamanho responderá com as especificações a baixo */
+    label.logo {
+        font-size: 30px;           /* Tamanho da fonte */
+        padding-left: 50px;        /* Margem a esquerda */
+    }
+
+    nav ul li a {
+        font-size: 16px;           /* Tamanho da fonte */
+    }
+}
+
+@media (max-width: 858px) {        /* Em determinado tamanho responderá com as especificações a baixo */
+    .checkbtn {
+        display: block;            /* Elementos bloqueados */
+    }
+
+    ul {
+        position: fixed;           /* Elemento posicionado em relação a tela do navegador */
+        width: 100%;               /* Largura */
+        height: 100vh;             /* Altura */
+        background: #2c3e50;     /* Cor do fundo */
+        top: 80px;                 /* Distância do topo */
+        left: -100%;               /* Distância da esquerda (para não ser mostrado) */
+        text-align: center;        /* Alinhamento do texto ao centro */
+        transition: all .5s;       /* Transição de todos elementos */
+    }
+
+    nav ul li {
+        display: block;            /* Elementos bloqueados */
+        margin: 50px 0;            /* Margem */
+        line-height: 30px;         /* Especifica altura da linha */
+    }
+
+    nav ul li a {
+        font-size: 20px;           /* Tamanho da fonte */
+    }
+
+    a:hover, a.active {
+        background: none;          /* Cor do fundo */
+        color: #0082e6;          /* Cor */
+    }
+
+    #check:checked ~ ul {
+        left: 0;                   /* Distância da esquerda (para ser mostrado) */
+    }
+}
+
+section {
+    background: url(bg1.jpg) no-repeat;     /* Background com url da imagem (sem repetição) */
+    background-size: cover;                 /* Que cubra toda página */
+    height: calc(100vh - 80px);             /* Altura com um cálculo de 100 da tela toda menos 80px que refere-se a altura do menu */
+}
